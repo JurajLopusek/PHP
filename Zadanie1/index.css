@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15172b;
+    color: #fff;
+    padding: 10px 20px;
+    height: 70px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+nav ul li {
+    margin-left: 20px; 
+}
+
+nav ul li:first-child {
+    margin-left: 0; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.welcome {
+    text-align: left; 
+}
+
+section {
+    display: none;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+
+:target {
+    display: block;
+}
+.cele_meno{
+    text-decoration: none;
+    color: gray; 
+
+}
+.comboboxy{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}

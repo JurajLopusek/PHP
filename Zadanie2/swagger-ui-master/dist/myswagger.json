@@ -1,0 +1,141 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Rozvrh API",
+    "description" : "API for managing schedules",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/JURAJLOPUSEK_1/Zadanie2/1.0.0"
+  }, {
+    "url" : "https://node71.webte.fei.stuba.sk/Zadanie2/api.php"
+  } ],
+  "paths" : {
+    "" : {
+      "get" : {
+        "summary" : "Get a schedule",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully created"
+          },
+          "400" : {
+            "description" : "Invalid request body"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Create a new schedule entry",
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ScheduleEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successfully created"
+          },
+          "400" : {
+            "description" : "Invalid request body"
+          }
+        }
+      }
+    },
+    "?id={id}" : {
+      "put" : {
+        "summary" : "Update a schedule entry",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          },
+          "description" : "ID of the schedule entry to update"
+        } ],
+        "requestBody" : {
+          "required" : true,
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ScheduleEntry"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successfully updated"
+          },
+          "404" : {
+            "description" : "Schedule entry not found"
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete a schedule entry",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          },
+          "description" : "ID of the schedule entry to delete"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted"
+          },
+          "404" : {
+            "description" : "Schedule entry not found"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ScheduleEntry" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer"
+          },
+          "den" : {
+            "type" : "string"
+          },
+          "od" : {
+            "type" : "string"
+          },
+          "do" : {
+            "type" : "string"
+          },
+          "predmet" : {
+            "type" : "string"
+          },
+          "akcia" : {
+            "type" : "string"
+          },
+          "miestnost" : {
+            "type" : "string"
+          },
+          "vyucujuci" : {
+            "type" : "string"
+          },
+          "obmedzenie" : {
+            "type" : "string"
+          },
+          "kapacita" : {
+            "type" : "integer"
+          }
+        }
+      }
+    }
+  }
+}

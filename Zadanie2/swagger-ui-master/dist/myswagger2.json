@@ -1,0 +1,88 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Stuba Pracovisko API",
+    "description" : "API for retrieving data about research topics from STUBA (Slovak University of Technology in Bratislava) based on workplace and type of work.",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/JURAJLOPUSEK_1/Zadanie2.1/1.0.0"
+  }, {
+    "url" : "https://node71.webte.fei.stuba.sk/Zadanie2/api2.php"
+  } ],
+  "paths" : {
+    "?pracovisko={pracovisko}&typprace={typprace}" : {
+      "get" : {
+        "summary" : "Retrieve research topics data",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "pracovisko",
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "Identifier of the workplace",
+          "required" : true
+        }, {
+          "in" : "query",
+          "name" : "typprace",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A list of research topics data",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ResearchTopic"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid request or missing parameters"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResearchTopic" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "Unique identifier of the research topic"
+          },
+          "supervisor" : {
+            "type" : "string",
+            "description" : "Name of the supervisor"
+          },
+          "title" : {
+            "type" : "string",
+            "description" : "Title of the research topic"
+          },
+          "type" : {
+            "type" : "string",
+            "description" : "Type of work (BP, DP, DizP)"
+          },
+          "capacity" : {
+            "type" : "string",
+            "description" : "Capacity and occupancy of the topic (e.g., \"2 / 5\")"
+          },
+          "link" : {
+            "type" : "string",
+            "description" : "Link to more details about the research topic"
+          }
+        }
+      }
+    }
+  }
+}

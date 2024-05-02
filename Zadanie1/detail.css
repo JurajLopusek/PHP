@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #15172b;
+    color: #fff;
+    padding: 10px 20px;
+    height: 70px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.welcome {
+    text-align: left;
+}
+
+section {
+    display: none;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+
+:target {
+    display: block;
+}
+
+.cele_meno {
+    text-decoration: none;
+    color: gray;
+
+}
+
+.comboboxy {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main {
+    font-family: 'Courier New', monospace;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #08d;
+    width: 100%;
+    color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meno {
+    font-size: 40px;
+}
+
+.detail {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail2 {
+    margin-left: 100px;
+    margin-right: auto;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .detail2 {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+}
