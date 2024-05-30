@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #FF6A00;
+    /* Adjust with the orange from the logo */
+    --primary-color-light: #FF8C42;
+    /* Lighter shade of orange */
+    --secondary-color: #000000;
+    /* Black */
+    --accent-color: #FFFFFF;
+    /* White */
+    --nav-font-size: 1.2rem;
+    /* Increased font size for navbar */
+    --inactive-color: #6e6c6c;
+    /* Grey color for non-active links */
+    --invisible-color: rgba(0, 0, 0, 0);
+    /* Transparent color */
+    --body-font-family: 'Arial', sans-serif; /* Modern and readable font for body text */
+    --header-font-family: 'Helvetica Neue', sans-serif; /* Stylish font for headers */
+}
+#tableQuestions_wrapper{
+    width: 100%; /* Nastavte maximálnu šírku kontajnera podľa potreby */
+    overflow-x: auto; /* Povolte horizontálny overflow s posuvníkom */
+    white-space: nowrap; 
+}
+.tableHeader {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 10px !important;
+}
+
+.containerTable {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+body {
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    font-family: var(--body-font-family);
+}
+
+.form-wrapper {
+    margin-right: auto;
+    /* Pushes the form to the left */
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    /* Modern shadow for depth */
+    border-bottom: none;
+    /* Removing border for a cleaner look */
+}
+
+.navbar-brand img {
+    height: auto;
+    width: auto;
+    max-height: 60px;
+    /* Size to fit new navbar height */
+}
+
+.nav-link {
+    color: var(--inactive-color);
+    font-size: var(--nav-font-size);
+    font-weight: 500;
+    /* Medium font weight for better readability */
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition for color change */
+    border-radius: 5px;
+    border: 2px solid var(--invisible-color);
+    /* Border for active link */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Subtle hover effect */
+    border-radius: 9px;
+    border: 2px solid var(--accent-color);
+    /* Border for active link */
+}
+
+.navbar .nav-link.active {
+    color: var(--accent-color);
+    /* White color for active link */
+    background-color: transparent;
+}
+
+/* Responsive nav-brand size */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        max-height: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .select-language {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 992px) {
+    .select-language {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-nav {
+        align-items: center;
+    }
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Additional modern touches */
+button.navbar-toggler {
+    border-color: var(--accent-color);
+}
+
+button.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    /* Bold font weight for emphasis */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition for color change */
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #FF8C42;
+    /* Lighter shade of orange on hover */
+}
+
+.username {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.container {
+    margin-top: 2rem;
+    padding-top: 20px;
+    /* Spacing from the top */
+    border: 2px solid var(--primary-color);
+    /* Border for a cleaner look */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px var(--primary-color);
+    /* Modern shadow for depth */
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    /* Large font size for headings */
+    font-weight: 600;
+    /* Bold font weight for emphasis */
+    text-align: center;
+    /* Centered text */
+    font-family: var(--header-font-family);
+}
+
+.container p {
+    font-size: 1.2rem;
+    /* Increased font size for paragraphs */
+    line-height: 1.6;
+    /* Increased line height for better readability */
+}
+
+.container input {
+    margin-bottom: 20px;
+    /* Spacing from the top */
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-custom {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+.btn-custom:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+#addOption {
+    margin-top: 10px;
+}
+
+#deleteOption {
+    margin-top: 10px;
+}
+
+#submitButton {
+    margin: 10px;
+}
+#exportButton{
+    margin: 10px !important;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+h2, h3 {
+    margin-top: 20px; /* Space above headings for clear section separation */
+}
+
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-family: var(--header-font-family);
+}
+
+.card-footer {
+    background-color: var(--primary-color-light);
+    color: var(--accent-color);
+    border-top: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1.5em;
+}
+
+.question {
+    /*TODO*/
+    border: black 1px solid;
+    margin-bottom: 2em;
+}
+
+.language-btn {
+    background-color: transparent;
+    /* Nastaví transparentné pozadie */
+    border: 1px solid transparent;
+    /* Nastaví transparentnú hranicu */
+    color: #000;
+    margin-left: 20px;
+}
+
+
+#wordCloud{
+    margin-left: 25%;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+}
+.cloudTag{
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+#qrModal .modal-content {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#qrModal .modal-header {
+    border-bottom: 1px solid #dee2e6; /* Gives a subtle line to separate the header */
+}
+
+#qrModal .modal-body {
+    padding: 20px;
+    text-align: center; /* Ensures QR code is centered */
+}
+
+#qrModal .btn-close {
+    background-color: #f5f5f5; /* Light grey background for close button, adjust as needed */
+}
+
+/* Style for QR code itself, ensuring it is visually centered and has some spacing if needed */
+#qrCode {
+    background-color: #fff; /* White background to contrast with QR code */
+    display: inline-block; /* Helps in centering */
+    margin: auto; /* Further assists with center alignment */
+}
+
+.center-content {
+    text-align: center; /* Centers text and inline elements within the cell */
+    vertical-align: middle; /* Optionally, this aligns content in the middle vertically if needed */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#wordCloud span {
+    animation: fadeIn 1s;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    #answers, #wordCloud {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .cloudTag {
+        font-size: 80%; /* Smaller tags on smaller screens */
+    }
+}
+
+#answers {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cloudTag {
+    display: inline-block;
+    margin: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cloudTag:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#answers ul {
+    list-style: none;
+    padding: 0;
+}
+#answers li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--primary-color-light);
+    color: var(--accent-color);
+    border-radius: 4px;
+}
+#answers li:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.text{
+    color: #dee2e6;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--accent-color) !important; 
+    border-radius: 9px !important;
+}
+
+.modalButtons:hover {
+    background-color: var(--primary-color-light) !important;
+    color:  var(--accent-color) !important;
+    border-radius: 9px !important;
+}
+
+.nav-link.modalButtons.active {
+    background-color: var(--primary-color) !important;
+    color: var(--accent-color) !important;
+    border-radius: 9px !important;
+}
+
+input[type="text"], input[type="submit"] {
+    width: 100%; /* Full width for better form structure */
+    padding: 10px; /* Comfortable padding */
+    margin-top: 8px; /* Uniform margin for vertical rhythm */
+    border: 1px solid #ccc; /* Subtle border */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Soft inset shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    cursor: pointer; /* Indicates clickable */
+    transition: background-color 0.2s; /* Smooth transition for hover effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #FF8C42; /* Lighter shade of primary color on hover */
+}
+
+@media (max-width: 768px) {
+    .form-wrapper, .container {
+        padding: 10px; /* Adequate padding in smaller screens */
+    }
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color); /* Highlight with primary color */
+    box-shadow: 0 0 8px rgba(255,106,0,0.6); /* Glowing effect for emphasis */
+}

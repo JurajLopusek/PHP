@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  # Nginx webserver service
+  nginx:
+    image: nginx:1.18
+    ports:
+      - "8090:443"
+    volumes:
+      - ./src:/var/www/Webte2Final
+      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./.docker/nginx/Certifikáty:/etc/nginx/certs
+    depends_on:
+      - php
+
+  # PHP-FPM service
+  php:
+    build: ./.docker/php
+    working_dir: /var/www/Webte2Final
+    volumes:
+      - ./src:/var/www/Webte2Final
+    depends_on:
+      - mysql
+
+  # MySQL service
+  mysql:
+    image: mysql/mysql-server:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rado-bezpecne-heslo1
+      MYSQL_USER: xkubalec
+      MYSQL_PASSWORD: rado-bezpecne-heslo1
+      MYSQL_DATABASE: webteFinal
+    volumes:
+      - ./.docker/mysql/my.cnf:/etc/mysql/mysql.cnf
+      - ./.database:/docker-entrypoint-initdb.d
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=$MYSQL_ROOT_PASSWORD
+      interval: 5s
+      retries: 10
+
+  # phpMyAdmin interface
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5
+    ports:
+      - "8100:80"
+    environment:
+      PMA_HOST: mysql
+    depends_on:
+      - mysql
+
+volumes:
+  mysqldata:
